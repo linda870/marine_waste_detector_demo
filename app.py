@@ -147,8 +147,8 @@ with gr.Blocks(title="Marine Litter & Species Detector") as demo:
             conf_slider = gr.Slider(0.05, 0.95, value=DEFAULT_CONF, step=0.05, label="Confidence threshold (used when per-class thresholds are off)")
             iou_slider = gr.Slider(0.05, 0.95, value=DEFAULT_IOU, step=0.05, label="IoU threshold (NMS)")
             per_class_checkbox = gr.Checkbox(value=True, label="Use tuned per-class confidence thresholds")
-            tta_checkbox = gr.Checkbox(value=True, label="Use test-time augmentation (TTA) — slower, usually more accurate")
-            tiling_checkbox = gr.Checkbox(value=False, label="Use tiled inference (recommended for crowded/cluttered photos — slower)")
+            tta_checkbox = gr.Checkbox(value=False, label="Use test-time augmentation (TTA) — much slower on this free-tier CPU server, usually more accurate")
+            tiling_checkbox = gr.Checkbox(value=False, label="Use tiled inference (recommended for crowded/cluttered photos — much slower on this free-tier CPU server)")
             class_filter = gr.Dropdown(
                 choices=list(CLASS_NAMES.values()),
                 multiselect=True,
